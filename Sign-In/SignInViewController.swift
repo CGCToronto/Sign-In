@@ -10,7 +10,7 @@ import UIKit
 import GoogleSignIn
 import GoogleAPIClientForREST
 
-class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
+class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
     @IBOutlet weak var googleSignInButton: GIDSignInButton!
     private let scopes = [kGTLRAuthScopeSheetsSpreadsheetsReadonly]
@@ -23,10 +23,16 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         super.viewDidLoad()
 
         // Configure Google Sign-in.
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().scopes = scopes
-        GIDSignIn.sharedInstance().signInSilently()
+        if let signIn = GIDSignIn.sharedInstance() {
+            signIn.delegate = self
+            signIn.uiDelegate = self
+            signIn.scopes = scopes
+            if signIn.hasAuthInKeychain() {
+                signIn.signInSilently()
+            }
+        } else {
+            assertionFailure("Failed to initiate GIDSignIn sharedInstance")
+        }
 
         // Add a UITextView to display output.
         output.frame = view.bounds
@@ -42,8 +48,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         // ...
     }
 
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-              withError error: Error!) {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             showAlert(title: "Authentication Error", message: error.localizedDescription)
             self.service.authorizer = nil
@@ -68,6 +73,11 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
                              delegate: self,
                              didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:))
         )
+    }
+    
+    // List Google Sheets for selection
+    func listUserSheetForSelectionAsDataSource() {
+        
     }
 
     // Process the response and display output

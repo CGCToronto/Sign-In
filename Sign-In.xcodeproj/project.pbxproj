@@ -10,7 +10,7 @@
 		09ABE8A1D8BB15A83B652486 /* Pods_Sign_In.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8B7B2F7845F6B330BA800F /* Pods_Sign_In.framework */; };
 		4C4A948F21C59EE000A1ABE3 /* GoogleAPIClientForREST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4A948E21C59EE000A1ABE3 /* GoogleAPIClientForREST.framework */; };
 		4CAC0BE121C55C7A0055FF44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAC0BE021C55C7A0055FF44 /* AppDelegate.swift */; };
-		4CAC0BE321C55C7A0055FF44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAC0BE221C55C7A0055FF44 /* ViewController.swift */; };
+		4CAC0BE321C55C7A0055FF44 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAC0BE221C55C7A0055FF44 /* SignInViewController.swift */; };
 		4CAC0BE621C55C7A0055FF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAC0BE421C55C7A0055FF44 /* Main.storyboard */; };
 		4CAC0BE821C55C7B0055FF44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAC0BE721C55C7B0055FF44 /* Assets.xcassets */; };
 		4CAC0BEB21C55C7B0055FF44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAC0BE921C55C7B0055FF44 /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		4C4A949021C5A20400A1ABE3 /* Sign-In-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sign-In-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CAC0BDD21C55C7A0055FF44 /* Sign-In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sign-In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CAC0BE021C55C7A0055FF44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4CAC0BE221C55C7A0055FF44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CAC0BE221C55C7A0055FF44 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		4CAC0BE521C55C7A0055FF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CAC0BE721C55C7B0055FF44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CAC0BEA21C55C7B0055FF44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			children = (
 				4C4A949021C5A20400A1ABE3 /* Sign-In-Bridging-Header.h */,
 				4CAC0BE021C55C7A0055FF44 /* AppDelegate.swift */,
-				4CAC0BE221C55C7A0055FF44 /* ViewController.swift */,
+				4CAC0BE221C55C7A0055FF44 /* SignInViewController.swift */,
 				4CAC0BE421C55C7A0055FF44 /* Main.storyboard */,
 				4CAC0BE721C55C7B0055FF44 /* Assets.xcassets */,
 				4CAC0BE921C55C7B0055FF44 /* LaunchScreen.storyboard */,
@@ -229,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CAC0BE321C55C7A0055FF44 /* ViewController.swift in Sources */,
+				4CAC0BE321C55C7A0055FF44 /* SignInViewController.swift in Sources */,
 				4CAC0BE121C55C7A0055FF44 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6W74ACBV3;
 				INFOPLIST_FILE = "Sign-In/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -397,6 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6W74ACBV3;
 				INFOPLIST_FILE = "Sign-In/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
